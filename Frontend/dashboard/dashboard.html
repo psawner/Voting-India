@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="dashboard.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.0/lottie.min.js"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-colorschemes"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    
+    <sidebar class="sidebar">
+        <div class="wrap">
+            <div class="wrap1">
+                <div class="vote_logo"><img src="https://thumbs.dreamstime.com/b/election-vote-ballot-box-logo-black-isolated-over-white-background-185960084.jpg"> </div>
+                <h3>Voting <span>I</span>ndia</h3>
+                <div class="closemenu"><i class="bi bi-door-closed-fill"></i></div>
+            </div>
+    
+            <div class="wrap2">
+                <div class="wrap3">
+                    <p>Menu</p>
+    
+                    <div class="list_items1">
+                        <ul>
+                           <li id="nav-home" class="dashboard"><i class="fa-brands fa-slack"></i> Dashboard</li>
+                           <li class="candidates"><i class="fa-solid fa-person"></i> Candidates List</li>
+                           <li class="casting_vote"><i class="fa-solid fa-person-booth"></i> Voting Panel</li>
+                           <li class="voting"><i class="fa-solid fa-square-poll-vertical"></i> Voting Status</li>
+                           <li class="details"><i class="fa-solid fa-circle-info"></i> Election Details</li>
+                           <li class="admin"><i class="fa-solid fa-user-secret"></i> Admin Panel</li>
+                           
+                        </ul>
+                    </div>
+                </div>
+    
+                <div class="wrap4">
+                    <p>General</p>
+    
+                    <div class="list_items2">
+                        <ul>
+                            <li class="settings"><i class="fa-solid fa-gear"></i> Settings</li>
+                            <!--settings model-->
+                            <div class="settings_hover_ui" style="display: none;">
+                                <ul>
+                                    <li class="password_change"><span class="icon"><i class="bi bi-gear-wide-connected"></i></span><span class="text"> Password Change</span></li>
+                                    <li>
+                                        <span class="icon"><i class="bi bi-bell"></i></span>
+                                        <span class="text"> Notification</span>
+                                        <span class="switch_wrap">
+                                            <label class="switch">
+                                                <input type="checkbox" id="notificationToggle">
+                                                <span class="slider round"></span>
+                                            </label>
+                                        </span>
+                                    </li>
+                                    <li><span class="icon"><i class="bi bi-translate"></i></span><span class="text"> Language</span></li>
+                                    <li class="theme"><span class="icon"><i class="bi bi-palette-fill"></i></span><span class="text"> Theme</span></li>
+                                    <!--theme-model-->
+                                    <div class="theme_wrap">
+                                        <ul>
+                                            <li class="light_mode"><i class="bi bi-brightness-high-fill"></i> Light </li>
+                                            <li class="dark_mode"><i class="bi bi-moon-stars-fill"></i> Dark</li>
+                                        </ul>
+                                    </div>
+                                </ul>
+                            </div>
+                            <li class="help"><i class="fa-solid fa-life-ring"></i> Help</li>
+                            <li class="profile"><i class="fa-solid fa-user"></i> Profile</li>
+                            <li class="logout"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </sidebar>
+    
+
+    <section class="right">
+        <header class="header">
+            <div class="wrap-header">
+                <div class="menu"><i class="fa-solid fa-bars"></i></div>
+                <div class="search_bar">
+                    <i class="fa-brands fa-searchengin"></i>
+                    <input type="text" id="search" name="search" placeholder="Search">
+                    
+                </div>
+
+                <div class="wrap-header1">
+                    <div class="updates">
+                        <div class="notification">
+                            <i class="fa-regular fa-bell"></i>
+                            <div class="signal"></div>
+                        </div>
+                            <!--notification model-->
+                        <div id="notifications_card" class="notification_model hidden">
+                            <div class="notification_header">
+                                <div class="first_layer">
+                                    <i class="fa-solid fa-bell"></i>
+                                    <h4>Notifications</h4>
+                                </div>
+                                <div class="second_layer">
+                                    <div class="circle1">
+                                        <div class="red_circle"></div>
+                                        <p>Unread</p>
+                                    </div>
+                                    <div class="circle2">
+                                        <div class="green_circle"></div>
+                                        <p>read</p>
+                                    </div>
+                                </div>
+                            </div>
+                           <div class="notification_content">
+                                <ul>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="message"><i class="fa-solid fa-square-envelope"></i></div>
+                    </div>
+
+                    <div class="profile">
+                        <div class="profile-pic"><img id="profileimage" src=""></div>
+                        <div class="profile-info">
+                            <p id="profile_name">christina</p>
+                            <p id="profile_email">christina@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </header>
+    
+        
+    
+        <main>
+            <div class="wrap-main">
+                <!--setting-->
+                <div class="content-box settings">
+                    <div class="settings_header">
+                        <i class="material-icons">settings</i>
+                        <h2> Settings</h2>
+                    </div>
+                </div>
+                <!--election details-->
+                <div class="content-box details">
+                    <div class="details_header">
+                        <div class="details_animation"></div>
+                        <h2>Election Information</h2>
+                    </div>
+                    <div class="wrapping_details_content">
+                        <div class="election_navigation">
+                            <h4>Navigation Guide</h4>
+                            <div class="navigation_line">
+                                <p><i class="fa-solid fa-location-arrow"></i> Navigate to each page of voting india follow these easy steps</p>
+                            </div>
+
+                            <div class="wrap_details">
+                                <div class="dashboard_navigation">
+                                    <p>1. This is your personalized Dashboard where you can quickly preview all critical information related to the election process. It includes the following components: Your Vote Status Card,Top Candidates Card, Election Calendar,Countdown Timer, Past Candidate Records, Party Overview, Statistical Highlights</p>
+                                    <div class="screenshot_dashboard">
+                                        <div class="screenshot1"><img src="images/Screenshot (430).png"></div>
+                                        <div class="screenshot1"><img src="images/Screenshot (431).png"></div>
+                                    </div>
+                                </div>
+                                <div class="dashboard_navigation">
+                                    <p>2. This is a candidates list where you can see who all the aspiring candidates for new election</p>
+                                    <div class="screenshot1"><img src="images/Screenshot (423).png"></div>
+                                </div>
+                                <div class="dashboard_navigation">
+                                    <p>3. Use this voting panel to review all candidates. Each one is shown in a separate card just click the 'Cast' button on your preferred candidate to vote.</p>
+                                    <div class="screenshot1"><img src="images/Screenshot (424).png"></div>
+                                </div>
+                                <div class="dashboard_navigation">
+                                    <p>4. This is the Voting Status page where you can monitor the current progress of the election. It includes various visual indicators such as:
+                                        <br><span> (A) A detailed list of all current candidates along with their total votes.</span>
+                                        <br><span> (B) A live graph showing vote trends or comparisons between candidates.</span>
+                                        <br><span> (C) A pie chart that visually represents the vote distribution among candidates.</span>
+                                        <br><span> (D) Winning percentage to help identify who's currently leading.</span>
+                                    </p>
+                                    <div class="screenshot1"><img src="images/Screenshot (426).png"></div>
+                                    <div class="screenshot1"><img src="images/Screenshot (429).png"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wrapping_details">
+                            <div class="guildlines_content">
+                                <div class="guidelines_heading">
+                                    <div class="guidelines_animation"></div>
+                                    <h4>Election Guidelines</h4>
+                                </div>
+                                <div class="instruction">
+                                    <ul>
+                                        <li> 1. Eligibility Criteria:
+
+                                            Only registered users are allowed to vote.
+                                            
+                                            Each voter must verify their identity (e.g., via email, ID, or token).</li>
+                                        <li>2. One Vote Per Voter:
+
+                                            Only one vote is allowed per voter for each election.
+                                            
+                                            Multiple attempts will not be counted or may be blocked.</li>
+                                        <li>3. Vote Confidentiality:
+
+                                            All votes are confidential and securely encrypted.
+                                            
+                                            No one can see who you voted for.</li>
+                                        <li>4. How to Vote:
+
+                                            Review candidate profiles.
+                                            
+                                            Click “Cast Vote” next to your selected candidate.
+                                            
+                                            Confirm your choice in the popup.</li>
+                                        <li>5. Tampering & Misuse:
+
+                                            Any attempt to tamper with the system may result in disqualification.
+                                            
+                                            Misuse or sharing of login credentials is prohibited.</li>    
+                                        <li>6. Support & Queries:
+
+                                            For technical issues, contact: [Support Email or Number]
+                                            
+                                            FAQs and help are available in the Help section.
+                                            
+                                            </li>
+                                      </ul>
+                                </div>
+                            </div>
+                            <div class="elections_dates">
+                                <div class="election_dates_header">
+                                    <div class="dates_animation"></div>
+                                    <h4>Election Schedule</h4>
+                                </div>
+                                <div class="dates_card">
+                                    <ul id="nomination_dates">
+                                        <li id="nomination_time"></li>
+                                    </ul>
+                                    <ul id="nomination_dates">
+                                        <li id="nomination_end_time" ></li>
+                                    </ul>
+                                    <ul id="final_list">
+                                        <li id="final_candidate_list_date_time"></li>
+                                    </ul>
+                                    <ul id="voting_dates">
+                                        <li id="voting_start_time"></li>
+                                    </ul>
+                                    <ul id="voting_dates">
+                                        <li id="voting_end_time"></li>
+                                    </ul>
+                                    <ul id="result_date">
+                                        <li id="result_time"></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--voting status-->
+                <div class="content-box voting">
+                    <div class="votingstatus_header">
+                        <div class="votingstatus_animation"></div>
+                        <h2>Election status</h2>
+                    </div>
+
+                    <div class="wrapping_currentvote">
+                        <div class="votecount">
+                            <h4>Current Vote Count</h4>
+                            <div class="current_status">
+                                <table class="vote_content">
+                                    <tbody id="candidatevote">
+                                        <tr>
+                                            <th>S.No</th>
+                                            <th>Name</th>
+                                            <th>Party</th>
+                                            <th>Vote Count</th>
+                                        </tr>
+                                        <tr><!--js--> </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="votecount">
+                            <h4>Pie Chart Projection</h4>
+                            <div class="piechart"><canvas id="myChart" width="300px" height="200"></canvas></div>
+                        </div>
+                    </div>
+                    <div class="wrapping_currentvote">
+                        <div class="votecount">
+                            <h4>Graph Projection</h4>
+                            <div class="piechart"><canvas id="mygraph" width="300px" height="200"></canvas></div>
+                        </div>
+                        <div class="votecount">
+                            <h4>Current Win Prediction</h4>
+                            <div class="win_prediction">
+                                <canvas id="winPredictionChart" width="300px" height="200"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <!--voting panel-->
+                <div class="content-box casting_vote">
+                    <div class="casting_header">
+                        <div class="casting_animation"></div>
+                        <h2>Voting Panel</h2>
+                    </div>
+
+                    <div class="casting_content">
+                        <div class="wrapping_cast"></div>
+                        <!--<div class="casting_animation3"></div>-->
+                    </div>
+                </div>
+                <!--candidate list-->
+                <div class="content-box candidates">
+                    <div class="heading_line">
+                        <div class="candidate_animation"></div>
+                        <h2>Candidates List</h2>
+                    </div>
+                    <div class="content_section">
+                        <div class="list_wrap">
+                            <h4>List of Candidates</h4>
+                            <div class="listed_candidates">
+                                <table class="list_content">
+                                    <tbody id="candidatetablebody">
+                                        <tr>
+                                            <th>S.No</th>
+                                            <th>Name</th>
+                                            <th>Party</th>
+                                        </tr>
+                                        <tr><!--js--> </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="list_animation"></div>
+                    </div>
+                </div>
+                <!--admin panel-->
+                <div class="content-box admin">
+                    <h2>Admin Dashboard</h2>
+                    <div class="admin_wrap">
+                        <div class="candidates_info">
+                            <h4>Candidate Creation</h4>
+                            <form class="candiates_personal">
+                                <div class="name_input">
+                                    <div class="icon1">
+                                        <i class="fa-solid fa-user"></i>
+                                        <input type="name" id="name" name="name" autocomplete="off" placeholder="Full Name" required>
+                                    </div>
+                                </div>
+                                <div class="name_input">
+                                    <div class="icon2">
+                                        <i class="fa-solid fa-flag"></i>
+                                        <input type="party" id="party" name="party" placeholder="Party Name" required>
+                                    </div>
+                                </div>
+                                <div class="name_input">
+                                    <div class="icon3">
+                                        <i class="fa-solid fa-person"></i>
+                                        <input type="number" id="age" name="age" min="22" placeholder="Age" required>
+                                    </div>
+                                </div>
+                                <button class="btn" type="submit"><i class="fa-solid fa-user-plus"></i> Add</button>
+                                <p id="message"></p>
+                            </form>
+                        </div>
+                        <div class="candidates_information">
+                            <h4>Candidates Detail</h4>
+                            <div class="candidates_details">
+                                <div class="candidate_tablecontent"> <!--js--> </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="election_content">
+                        <div class="electiondates_card">
+                            <h4>Election Announcement</h4>
+                            <form class="announcement">
+                                <div class="name_input">
+                                    <div class="box1">
+                                        <label for="nomination_start">Election Title:</label>
+                                        <input type="text" id="election_title" name="election_title" placeholder="Election Name" required>
+                                    </div>
+                                </div>
+                                <div class="name_input">
+                                    <div class="box1">
+                                        <label for="nomination_start">Nomination Start Date:</label>
+                                        <input type="datetime-local" id="nomination_start" name="nomination_start" required>
+                                    </div>
+                                </div>
+                                <div class="name_input">
+                                    <div class="box1">
+                                        <label for="nomination_start">Nomination End Date:</label>
+                                        <input type="datetime-local" id="nomination_end" name="nomination_end" required>
+                                    </div>
+                                </div>
+                                <div class="name_input">
+                                    <div class="box1">
+                                        <label for="nomination_start">Final Candidate List date:</label>
+                                        <input type="datetime-local" id="final_candidate_list_date" name="final_candidate_list_date"  required>
+                                    </div>
+                                </div>
+                                <div class="name_input">
+                                    <div class="box1">
+                                        <label for="nomination_start">Voting Start Date:</label>
+                                        <input type="datetime-local" id="voting_start" name="voting_start"  required>
+                                    </div>
+                                </div>
+                                <div class="name_input">
+                                    <div class="box1">
+                                        <label for="nomination_start">Voting End Date:</label>
+                                        <input type="datetime-local" id="voting_end" name="voting_end"  required>
+                                    </div>
+                                </div>
+                                <div class="name_input">
+                                    <div class="box1">
+                                        <label for="nomination_start">Result Declaration Date:</label>
+                                        <input type="datetime-local" id="result_declaration_date" name="result_declaration_date" required>
+                                    </div>
+                                </div>
+                                <button class="datesbtn" type="submit"><i class="fa-solid fa-calendar-days"></i> Add</button>
+                                <p id="dateresponse"></p>
+                            </form>
+                        </div>
+                        <div class="electiondatesshowing_card">
+                            <div class="dates_header">
+                                <h4>Election Dates</h4>
+                                <button class="edit"><i class="fa-solid fa-pen-to-square"></i></button>
+                            </div>
+                            <div class="datesaccquiring_card">
+                                <ul id="title">
+                                    <li id="title_name"></li>
+                                </ul>
+                                <ul id="nomination_dates">
+                                    <li id="nomination_time1"></li>
+                                </ul>
+                                <ul id="nomination_dates">
+                                    <li id="nomination_end_time1" ></li>
+                                </ul>
+                                <ul id="final_candidates">
+                                    <li id="final_candidates_time"></li>
+                                </ul>
+                                <ul id="voting_dates">
+                                    <li id="voting_start_time1"></li>
+                                </ul>
+                                <ul id="voting_dates">
+                                    <li id="voting_end_time1"></li>
+                                </ul>
+                                <ul id="result_date">
+                                    <li id="result_time1"></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!--users--> 
+                <div class="content-box profile">
+                    <div class="profile_heading">
+                        <i class="bi bi-person-fill"></i>
+                        <h2>Profile</h2>
+                    </div>
+                    <div class="profile_wrap">
+                        <div class="image_voter">
+                            <div class="profile-picture"><img id="profileinfoimage" src=""></div>
+                            <div class="profile-info">
+                                <p id="voter_name">christina</p>
+                            </div>
+                        </div>
+                        <div class="personal_info">
+                            <div class="upper_heading"><i class="fa-regular fa-address-card"></i> <p>Voter Profile</p> </div>
+                            <div class="personal_details">
+                                <h4>Personal Details</h4>
+                                <div class="tablecontent">
+                                    <div class="row">
+                                        <table class="voter">
+                                            <tbody>
+                                                <tr>
+                                                    <th>Name</th>
+                                                    <td id="voter_id_name"></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="row">
+                                        <table class="voter">
+                                            <tbody>
+                                                <tr>
+                                                    <th>Email</th>
+                                                    <td id="voter_id_email"></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="row">
+                                        <table class="voter">
+                                            <tbody>
+                                                <tr>
+                                                    <th>Age</th>
+                                                    <td id="voter_id_age">Piyush</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="row">
+                                        <table class="voter">
+                                            <tbody>
+                                                <tr>
+                                                    <th>Mobile No.</th>
+                                                    <td id="voter_id_mobile">Piyush</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="row">
+                                        <table class="voter">
+                                            <tbody>
+                                                <tr>
+                                                    <th>Address</th>
+                                                    <td id="voter_id_address">Piyush</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="row">
+                                        <table class="voter">
+                                            <tbody>
+                                                <tr>
+                                                    <th>Aadhar No.</th>
+                                                    <td id="voter_id_aadhar">Piyush</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="row">
+                                        <table class="voter">
+                                            <tbody>
+                                                <tr>
+                                                    <th>Role</th>
+                                                    <td id="voter_id_role">Piyush</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+             <!--dashboard-->   
+              <div class="content-box dashboard active">
+                <div class="dashboard_header">
+                    <div class="dashboard_animation"></div>
+                    <h2>Dashboard</h2>
+                </div>
+                <div class="wrap-main1">
+                    <div class="voting_status">
+                        <div class="head1 casting_vote">
+                            <h4>Voting Status</h4>
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </div>
+                        <div class="head3">
+                            <div id="voting_done"></div>
+                            <div id="voting_pending_animation"></div>
+                            <p id="messageofvote"></p>
+                        </div>
+                    </div>
+
+                    <div class="voting_status">
+                        <div class="head1 voting">
+                            <h4>Election Vote Tallying</h4>
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </div>
+                        <div class="head5">
+                            <p>Status</p>
+                            <div class="voting_count">
+                                <table class="current_candidates">
+                                    <tbody id="top_candidates">
+                                        <tr>
+                                            <th>S.NO</th>
+                                            <th>Name</th>
+                                            <th>Vote Count</th>
+                                        </tr>
+                                        <tr><!--js--></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="voting-schedule">
+                        <div class="head1 details">
+                            <h4>Election Dates</h4>
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </div>
+                        <div class="calendar">
+                            <div class="calendar-header">
+                                <button id="prev">&#8592;</button>
+                                <span id="month-name">Month Year</span>
+                                <button id="next">&#8594;</button>
+                            </div>
+                            <div class="calendar-days">
+                              <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+                            </div>
+                            <div class="calendar-dates" id="calendar-dates">
+                              <!-- JS will fill this -->
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    
+                    <div class="time_preview">
+                        <div class="status_info">
+                            <div class="head1 voting">
+                                <h4>Stats</h4>
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </div>
+                            
+                            <div class="parameters">
+                                <div class="graph"><canvas id="voteChart"></canvas></div>
+                            </div>
+                        </div>
+                        <div class="election-timer">
+                            <h4>Countdown</h4>
+                            <div class="time">
+                                <div id="countdown">
+                                    <h2>Event Starts In:</h2>
+                                    <div class="timer">
+                                      <div><span id="days">00</span><small>Days</small></div>
+                                      <div><span id="hours">00</span><small>Hours</small></div>
+                                      <div><span id="minutes">00</span><small>Minutes</small></div>
+                                      <div><span id="seconds">00</span><small>Seconds</small></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wrap-main2">
+                        <div class="leaders_work">
+                            <div class="work">
+                                <h4>Past Records</h4>
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </div>
+                            <ol class="list_of_candidates">
+                                <li><a href="https://en.wikipedia.org/wiki/Rahul_Gandhi">Rahul Gandhi</a></li>
+                                <li><a href="https://en.wikipedia.org/wiki/Arvind_Kejriwal">Arvind Kejriwal</a></li>
+                                <li><a href="https://en.wikipedia.org/wiki/Narendra_Modi">Narendra Modi</a></li>
+                            </ol>
+                        </div>
+                        <div class="parties">
+                            <div class="parties_name">
+                                <h4>Parties</h4>
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </div>
+                            <div class="parties_logo">
+                                <ul class="parties_logo_list">
+                                    <li><img src="https://static.india.com/wp-content/uploads/2014/03/aap1.jpg"></li>
+                                    <li><img src="https://artworkbird.co.in/wp-content/uploads/2023/07/bjp-background-hd-png-1024x1024.png"> </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+        </main>
+    </section>
+
+
+    <div class="candidate_model" style="display: none;">
+        <div class="model_content">
+            <div id="opening_animation"></div>
+            <div class="wrapping_info">
+                <h4>Candidate Details</h4>
+                <form id="editform">
+                  <label>Name:<input type="text" id="editName" /></label><br/>
+                  <label>Party:<input type="text" id="editParty" /></label><br/>
+                  <label>Age:<input type="number" id="editAge" /></label><br/>
+
+                  <div class="btns">
+                    <button type="submit">Update</button>
+                    <button type="button" id="deleteBtn">Delete</button>
+                  </div>
+                </form>
+                <div class="closemodel"><i class="fa-solid fa-door-closed"></i></div>
+            </div>
+            <div id="closing_animation"></div>
+        </div>
+    </div>
+
+    <!--animation after casting vote-->
+    <div class="aftercasting_animation">
+        <div class="wrappingcast_animation">
+            <div class="castingvote_animation"></div>
+        </div>
+    </div>
+
+
+    <div class="date_model" style="display:none;">
+        <div class="date_model_content">
+            <div class="model_header">
+                <h4>Candidate Details</h4>
+                <button class="cancel"><i class="fa-solid fa-door-closed"></i></button>
+            </div>
+            <div class="wrapping_date_model">
+                <form class="date_edit">
+                    <div class="name_input">
+                        <div class="box1">
+                            <label for="nomination_start">Election Title:</label>
+                            <input type="text" id="edit_title" placeholder="Election Name" required>
+                        </div>
+                    </div>
+                    <div class="name_input">
+                        <div class="box1">
+                            <label for="nomination_start">Nomination Start Date:</label>
+                            <input type="datetime-local" id="edit_nomination_start"required>
+                        </div>
+                    </div>
+                    <div class="name_input">
+                        <div class="box1">
+                            <label for="nomination_start">Nomination End Date:</label>
+                            <input type="datetime-local" id="edit_nomination_end" name="nomination_end" required>
+                        </div>
+                    </div>
+                    <div class="name_input">
+                        <div class="box1">
+                            <label for="nomination_start">Final Candidate List date:</label>
+                            <input type="datetime-local" id="edit_final_candidate_list_date" name="final_candidate_list_date"  required>
+                        </div>
+                    </div>
+                    <div class="name_input">
+                        <div class="box1">
+                            <label for="nomination_start">Voting Start Date:</label>
+                            <input type="datetime-local" id="edit_voting_start" required>
+                        </div>
+                    </div>
+                    <div class="name_input">
+                        <div class="box1">
+                            <label for="nomination_start">Voting End Date:</label>
+                            <input type="datetime-local" id="edit_voting_end" required>
+                        </div>
+                    </div>
+                    <div class="name_input">
+                        <div class="box1">
+                            <label for="nomination_start">Result Declaration Date:</label>
+                            <input type="datetime-local" id="edit_result_declaration_date" required>
+                        </div>
+                    </div>
+
+                    <div class="btns">
+                        <button class="updatebtn" type="submit">Update</button>
+                        <button class="deletebtn" type="button">Delete</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+      
+    <!--clicking sound-->
+    <!--<audio id="toggleSound" src="sounds/mixkit-modern-technology-select-3124.wav" preload="auto"></audio>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>

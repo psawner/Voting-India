@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+    background: #e1e2eb;
+    
+}
+main{
+    background:rgb(245, 245, 242); 
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    border: 1px solid rgb(172, 163, 163);
+    border-radius: 8px;
+    width:100%;
+    max-width: 500px;
+}
+.wrap1{
+    padding:20px;
+    margin-bottom: -20px;
+}
+.wrap1 p{
+    font-size: 0.8rem;
+    color: rgb(180, 174, 174);
+}
+.vote_logo img{
+    width:50px;
+    border-radius: 50%;
+}
+h3{
+    color:rgb(11, 11, 121)
+}
+span{
+    background: linear-gradient( #ff6a00, #ffffff,green);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* For Firefox */
+  background-clip: text;
+  color: transparent;
+  
+}
+.wrap2{
+    margin-top: 8px;
+    text-align: center;
+    color:rgb(0, 47, 255);
+}
+.wrap2 p{
+    margin-left: 100px;
+    font-size: 0.8rem;
+}
+.signup{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap:10px;
+    width:100%;
+}
+#name,#age,#mobile,#address,#aadhar,#role, #email,#password{
+    width:100%;
+    padding:8px;
+    padding-left:30px ;
+    border: 1px solid rgb(192, 183, 183);
+    border-radius:5px;
+    outline: none;
+    transition:border-color 0.3s;
+}
+#email:focus,#password:focus,#name:focus,#age:focus,#mobile:focus,#address:focus,#aadhar:focus,#role:focus{
+    border-color: #4c00ff;
+    box-shadow: 0 0 10px #001aff;
+}
+.icon1,.icon2,.icon3,.icon4,.icon5,.icon6,.icon7,.icon8{
+    display: flex;
+    position: relative;
+    
+}
+.icon1 i,.icon2 i,.icon3 i,.icon4 i,.icon5 i,.icon6 i,.icon7 i,.icon8 i{
+    left: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color:rgb(40, 48, 65)
+}
+
+.policy{
+    display: flex;
+    gap:8px;
+}
+
+#highlight{
+    background: linear-gradient( #ff6a00, #04035e,green);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* For Firefox */
+  background-clip: text;
+  color: transparent;
+  cursor: pointer;
+}
+#highlight:hover{
+    background: linear-gradient( #001aff, #0400ff,rgb(6, 2, 255));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* For Firefox */
+  background-clip: text;
+  color: transparent;
+}
+#checkbox{
+    accent-color: rgb(17, 17, 78);
+}
+.btn{
+    padding: 8px;
+    border: 1px solid rgb(190, 180, 180);
+    border-radius: 10px;
+    background: linear-gradient(to right, rgb(245, 192, 131),white, rgb(135, 228, 107));
+    color:rgb(15, 0, 0);
+    cursor: pointer;
+    transition: background 0.3s ease;
+    box-shadow: 0 0 10px grey; 
+}
+.btn:active{
+    box-shadow: 0 0 10px rgb(204, 204, 212);
+}
+.btn:hover{
+    background: linear-gradient(to right, rgb(245, 192, 131),white, rgb(135, 228, 107));
+}
+
+.icon3 i{
+    font-size: 1.3rem;
+}
+
+.button-spinner {
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(2, 255, 23, 0.3);
+    border-top: 3px solid #ffae00;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+#responseMsg{
+    text-align: center;
+}
+
+@media screen and (max-width:400px) {
+    
+}

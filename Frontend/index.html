@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <main>
+        <div class="wrap1">
+            <div class="vote_logo"><img src="https://thumbs.dreamstime.com/b/election-vote-ballot-box-logo-black-isolated-over-white-background-185960084.jpg"> </div>
+            <h3>Voting <span>I</span>ndia</h3>
+            <p>Vote for Nation </p>
+        </div>
+
+        <form class="login_info">
+            <div class="email_input">
+                <p>Email:</p>
+                <div class="icon1">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="email" id="email" name="email" autocomplete="off" placeholder="Your Email" required>
+                </div>
+            </div>
+            <div class="password_input">
+                <div class="wrap2">
+                    <p>Password:</p>
+                    <a href="#">Forgot Password?</a>
+                </div>
+                <div class="icon2">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" id="password" name="password" autocomplete="off" placeholder="Password" required>
+                </div>
+            </div>
+            <div class="remember_me">
+                <input type="checkbox" id="checkbox" name="remember_me">
+                <p>Remember me</p>
+            </div>
+
+            <button class="btn" type="submit" >Sign in </button>
+            <p id="responseMsg"></p>
+
+            <div class="lines">
+                <div class="line"></div>
+                Or
+                <div class="line"></div>
+            </div>
+
+            <div class="no_account">
+                <P>Don't have an account? <a href="signup/signup.html">Sign up</a></P>
+            </div>
+        </form>
+
+        
+    </main>
+
+    <audio id="toggleSound" src="sounds\mixkit-modern-technology-select-3124.wav" preload="auto"></audio>
+    <script src="index.js"></script>
+</body>
+</html>
