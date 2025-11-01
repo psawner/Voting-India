@@ -54,26 +54,26 @@ Make sure your frontend API calls point to http://localhost:3000.
 ## screeshots
 
 ### Login and Registration Pages
-![Login Page](https://github.com/psawner/Voting-India/screenshots/login.png)
+![Login Page](https://github.com/psawner/Voting-India/blob/main/screenshots/login.png)
 
-![Registration Page](https://github.com/psawner/Voting-India/screenshots/registration.png)
+![Registration Page](https://github.com/psawner/Voting-India/blob/main/screenshots/registration.png)
 
 ### Dashboard Page
-![Dashboard Page](https://github.com/psawner/Voting-India/screenshots/dashboard.png)
-![Dashboard1 Page](https://github.com/psawner/Voting-India/screenshots/dashboard1.png)
-![Dashboard2 Page](https://github.com/psawner/Voting-India/screenshots/dashboard2.png)
-![Dashboard3 Page](https://github.com/psawner/Voting-India/screenshots/dashboard3.png)
-![Dashboard4 Page](https://github.com/psawner/Voting-India/screenshots/dashboard4.png)
-![Dashboard5 Page](https://github.com/psawner/Voting-India/screenshots/dashboard5.png)
-![Dashboard6 Page](https://github.com/psawner/Voting-India/screenshots/dashboard6.png)
-![Dashboard7 Page](https://github.com/psawner/Voting-India/screenshots/dashboard7.png)
-![Dashboard8 Page](https://github.com/psawner/Voting-India/screenshots/dashboard8.png)
+![Dashboard Page](https://github.com/psawner/Voting-India/blob/main/screenshots/dashboard.png)
+![Dashboard1 Page](https://github.com/psawner/Voting-India/blob/main/screenshots/dashboard1.png)
+![Dashboard2 Page](https://github.com/psawner/Voting-India/blob/main/screenshots/dashboard2.png)
+![Dashboard3 Page](https://github.com/psawner/Voting-India/blob/main/screenshots/dashboard3.png)
+![Dashboard4 Page](https://github.com/psawner/Voting-India/blob/main/screenshots/dashboard4.png)
+![Dashboard5 Page](https://github.com/psawner/Voting-India/blob/main/screenshots/dashboard5.png)
+![Dashboard6 Page](https://github.com/psawner/Voting-India/blob/main/screenshots/dashboard6.png)
+![Dashboard7 Page](https://github.com/psawner/Voting-India/blob/main/screenshots/dashboard7.png)
+![Dashboard8 Page](https://github.com/psawner/Voting-India/blob/main/screenshots/dashboard8.png)
 
-![AdminDashboard Page](https://github.com/psawner/Voting-India/screenshots/adminDashboard.png)
-![AdminDashboard1 Page](https://github.com/psawner/Voting-India/screenshots/admindashboard1.png)
+![AdminDashboard Page](https://github.com/psawner/Voting-India/blob/main/screenshots/adminDashboard.png)
+![AdminDashboard1 Page](https://github.com/psawner/Voting-India/blob/main/screenshots/admindashboard1.png)
 
 ### security
-![Security](https://github.com/psawner/Voting-India/screenshots/security.png)
+![Security](https://github.com/psawner/Voting-India/blob/main/screenshots/security.png)
 
 
 
