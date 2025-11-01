@@ -32,7 +32,7 @@ npm start
 Run the following to create the database structure:
 ```bash
 mysql -u root -p < schema.sql
-
+```
 
 ## Configure Environment Variables
 Create a .env file in the root folder
@@ -49,5 +49,32 @@ EMAIL_PASS=youremailpassword
 ## Open the Frontend
 just Just open index.html in your browser, or serve it with a live server.
 Make sure your frontend API calls point to http://localhost:3000.
+
+
+## screeshots
+
+### Login and Registration Pages
+![Login Page](https://github.com/psawner/Voting-India/screenshots/login.png)
+
+![Registration Page](https://github.com/psawner/Voting-India/screenshots/registration.png)
+
+### Dashboard Page
+![Dashboard Page](https://github.com/psawner/Voting-India/screenshots/dashboard.png)
+![Dashboard1 Page](https://github.com/psawner/Voting-India/screenshots/dashboard1.png)
+![Dashboard2 Page](https://github.com/psawner/Voting-India/screenshots/dashboard2.png)
+![Dashboard3 Page](https://github.com/psawner/Voting-India/screenshots/dashboard3.png)
+![Dashboard4 Page](https://github.com/psawner/Voting-India/screenshots/dashboard4.png)
+![Dashboard5 Page](https://github.com/psawner/Voting-India/screenshots/dashboard5.png)
+![Dashboard6 Page](https://github.com/psawner/Voting-India/screenshots/dashboard6.png)
+![Dashboard7 Page](https://github.com/psawner/Voting-India/screenshots/dashboard7.png)
+![Dashboard8 Page](https://github.com/psawner/Voting-India/screenshots/dashboard8.png)
+
+![AdminDashboard Page](https://github.com/psawner/Voting-India/screenshots/adminDashboard.png)
+![AdminDashboard1 Page](https://github.com/psawner/Voting-India/screenshots/admindashboard1.png)
+
+### security
+![Security](https://github.com/psawner/Voting-India/screenshots/security.png)
+
+
 
 
